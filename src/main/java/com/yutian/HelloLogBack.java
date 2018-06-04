@@ -13,8 +13,8 @@ public class HelloLogBack {
         logger.debug("Hello world.");
 
 
-        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-        StatusPrinter.print(lc);
+        //LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+        //StatusPrinter.print(lc);
 
     }
 
