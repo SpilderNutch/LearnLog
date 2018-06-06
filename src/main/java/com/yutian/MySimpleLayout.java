@@ -13,7 +13,7 @@ public class MySimpleLayout extends LayoutBase<ILoggingEvent> {
         sbuf.append(" ");
         sbuf.append(event.getLevel());
         sbuf.append(" [");
-        sbuf.append(event.getThreadName());
+        sbuf.append("Rocky-"+event.getThreadName());
         sbuf.append("] ");
         sbuf.append(event.getLoggerName());
         sbuf.append(" - ");
