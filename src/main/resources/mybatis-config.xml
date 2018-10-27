@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="xml/hotel-mapper.xmlBlogMapper.xml"/>
+        <mapper resource="xml/hotel-mapper.xml"/>
     </mappers>
 </configuration>

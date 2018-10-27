@@ -1,6 +1,7 @@
 package com.yutian.mapper;
 
 import com.yutian.entity.Hotel;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +9,7 @@ import java.util.Map;
 
 public interface HotelMapper {
 
-	//@Select("SELECT * FROM HOTEL WHERE ID = #{id}") 
+	@Select("SELECT * FROM HOTEL WHERE ID = #{id}")
 	//使用select JAVA注解来代替XML文件
 	Hotel getHotelMessageById(int id);
 

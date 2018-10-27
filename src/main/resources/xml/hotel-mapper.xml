@@ -26,6 +26,7 @@
   	]]>
   </sql>
 
+  <!--
   <select id="getHotelMessageById" resultMap="RM_Hotel">
     select <include refid="columns"/> from Hotel where id = #{id}
   </select>
@@ -44,14 +45,13 @@
  	ORDER BY lk_ltime ASC
   	
   </select>
-  
-  
+
   <select id="getPartnerList" resultMap="RM_Hotel">
   	select <include refid="columns"/> from Hotel 
   	where lk_ltime > #{lklTimeBegin} and lk_ltime &lt; #{lklTimeEnd}
 	  	and lk_etime > #{lkeTimeBegin} and lk_etime &lt; #{lkeTimeEnd}
 	  	and lk_noroom = #{lkNoroom} and lg_hname = #{lgHName}
-  </select>
+  </select>-->
   
   
   
