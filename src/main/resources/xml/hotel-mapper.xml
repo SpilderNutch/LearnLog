@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 完全限定名，便于查找相应的Mapper文件 -->
+<mapper namespace="com.yutian.mapper.HotelMapper">
+
+	<resultMap  id="RM_Hotel" type="com.yutian.entity.Hotel">
+		<result property="id"  column="id"/>
+		<result property="lkName" column="lk_name"/>
+		<result property="lkSex" column="lk_sex"/>
+		<result property="lkIdCode" column="lk_idcode"/>
+		<result property="lkAddress" column="lk_address"/>
+		<result property="lgHName" column="lg_hname"/>
+		<result property="lgHAddress" column="lg_haddress"/>
+		<result property="lgTelphone" column="lg_telphone"/>
+		<result property="lkNoroom" column="lk_noroom"/>
+		<result property="lkLtime" column="lk_ltime"/>
+		<result property="lkEtime" column="lk_etime"/>
+		<result property="lkCreatetime" column="lk_createtime"/>
+	</resultMap>
+
+  <sql id="columns">
+  	<![CDATA[
+		id,lk_name,lk_sex,lk_idcode,lk_address,lg_hname,lg_haddress,lg_telphone,lk_noroom,lk_ltime,lk_etime,lk_createtime
+  	]]>
+  </sql>
+
+  <select id="getHotelMessageById" resultMap="RM_Hotel">
+    select <include refid="columns"/> from Hotel where id = #{id}
+  </select>
+  
+  <select id="getLkRzData" resultMap="RM_Hotel">
+  	select <include refid="columns"/> from Hotel where 1=1
+  	<if test="lkIdCode != null">
+    		AND lk_idcode = #{lkIdCode}
+  	</if>
+  	<if test="lkLtime != null">
+    		AND lk_ltime > #{lkLtime}
+  	</if>
+  	<if test="lkLtime != null">
+    		AND lk_etime &lt; #{lkEtime}
+  	</if>
+ 	ORDER BY lk_ltime ASC
+  	
+  </select>
+  
+  
+  <select id="getPartnerList" resultMap="RM_Hotel">
+  	select <include refid="columns"/> from Hotel 
+  	where lk_ltime > #{lklTimeBegin} and lk_ltime &lt; #{lklTimeEnd}
+	  	and lk_etime > #{lkeTimeBegin} and lk_etime &lt; #{lkeTimeEnd}
+	  	and lk_noroom = #{lkNoroom} and lg_hname = #{lgHName}
+  </select>
+  
+  
+  
+</mapper>
