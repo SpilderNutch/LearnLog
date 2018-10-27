@@ -1,3 +1,4 @@
+/*
 package com.yutian.logback;
 
 import ch.qos.logback.classic.Logger;
@@ -40,3 +41,4 @@ public class PatternSample {
 
 
 }
+*/

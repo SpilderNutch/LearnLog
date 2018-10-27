@@ -25,11 +25,22 @@
         </dependency>
 
         <!--引入logback-core.jar、logback-classic.jar文件-->
+        <!--
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
+        -->
+        <!--开始学习log4j并比对它们之间的不同点-->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+
 
 
     </dependencies>

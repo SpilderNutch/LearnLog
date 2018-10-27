@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} %r [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!--级别 DEBUG，INFO，WARN，ERROR，FATAL-->
+        <!--%r，应用启动到日志打印毫秒数-->
+        <!--知识点，additivity="false"表示打印日志不叠加,不然日志将打印2遍-->
+        <!--提高级别，在级别之下的代码是不会执行的-->
+       <!--可以直接写入数据库-->
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <!--<Logger name="com.yutian.log4j.HelloLog4j2" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>-->
+    </Loggers>
+</Configuration>

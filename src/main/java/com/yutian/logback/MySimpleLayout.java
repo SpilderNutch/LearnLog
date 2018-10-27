@@ -1,3 +1,4 @@
+/*
 package com.yutian.logback;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
@@ -22,3 +23,4 @@ public class MySimpleLayout extends LayoutBase<ILoggingEvent> {
         return sbuf.toString();
     }
 }
+*/
